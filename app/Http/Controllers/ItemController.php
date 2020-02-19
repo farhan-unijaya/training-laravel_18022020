@@ -94,8 +94,14 @@ class ItemController extends Controller
      * @param  \App\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Item $item)
+    public function destroy(Request $request)
     {
         //
+        $item = Item::findOrFail($request->id);
+
+        if ($item->delete()) {
+            return response()->json(['status' => 'success', 'title' => 'Berjaya!', 'message' => 'Data telah dipadam.']);
+        }
+
     }
 }
