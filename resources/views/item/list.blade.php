@@ -15,7 +15,8 @@
                 			<td>Nama</td>
                 			<td>Description</td>
                 			<td>Status</td>
-                			<td>Harga</td>
+							<td>Harga</td>
+							<td>wujud</td>
                 			<td>Tindakan</td>
                 		</tr>
                 		<?php foreach ($items as $keyItem => $valueItem): ?>
@@ -24,7 +25,8 @@
                 			<td>{{ $valueItem->name }}</td>
                 			<td>{{ $valueItem->description }}</td>
                 			<td>{{ $valueItem->status }}</td>
-                			<td>{{ $valueItem->price }}</td>
+							<td>{{ $valueItem->price }}</td>
+							<td>{{ $valueItem->created_at }}</td>
                 			<td>
                 				<a class="btn btn-success btn-primary btn-xs" href="{{ route('item.form',$valueItem->item_id) }}" style="margin-bottom:10px">KEMASKINI</a>
                 				<br>

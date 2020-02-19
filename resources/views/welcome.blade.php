@@ -93,6 +93,7 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                     <a href="{{ route('training') }}">Training Page</a>
+                    <a href="{{ route('item.list') }}">Item List</a>
                 </div>
             </div>
         </div>
