@@ -27,7 +27,7 @@ CREATE TABLE `items` (
   `description` text NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`item_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of items
@@ -64,7 +64,7 @@ CREATE TABLE `password_resets` (
 -- ----------------------------
 -- Records of password_resets
 -- ----------------------------
-INSERT INTO `password_resets` VALUES ('farhanz95@gmail.com', '$2y$10$PQBR0Jvu46M.6/NIJrhZBuoYaNuRUifnYxL6mYSAHfQH7nPgZpAUW', '2020-02-18 04:32:30');
+INSERT INTO `password_resets` VALUES ('farhan.unijaya@gmail.com', '$2y$10$PQBR0Jvu46M.6/NIJrhZBuoYaNuRUifnYxL6mYSAHfQH7nPgZpAUW', '2020-02-18 04:32:30');
 
 -- ----------------------------
 -- Table structure for users
