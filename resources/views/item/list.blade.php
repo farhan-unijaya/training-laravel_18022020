@@ -8,7 +8,7 @@
                 <div class="card-header">Senarai Item</div>
 
                 <div class="card-body">
-
+                    <a href="{{ route('item') }}" class="btn btn-primary" style="margin-bottom: 10px;">Tambah</a>
                 	<table class="table table-bordered">
                 		<tr>
                 			<td>No</td>
@@ -22,11 +22,11 @@
                 		<tr>
                 			<td>{{ $keyItem+1 }}</td>
                 			<td>{{ $valueItem->name }}</td>
-                			<td>{{ $valueItem->description }}</td>
+                			<td>{!! nl2br($valueItem->description) !!}</td>
                 			<td>{{ $valueItem->status }}</td>
                 			<td>{{ $valueItem->price }}</td>
                 			<td>
-                				<a class="btn btn-success btn-primary btn-xs" href="{{ route('item.form',$valueItem->item_id) }}" style="margin-bottom:10px">KEMASKINI</a>
+                				<a class="btn btn-success btn-primary btn-xs" href="{{ route('item.form',$valueItem->item_id) }}" style="margin-bottom:10px;">KEMASKINI</a>
                 				<br>
                 				<a class="btn btn-success btn-danger btn-xs" href="javascript:;">PADAM</a>
                 			</td>

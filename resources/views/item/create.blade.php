@@ -36,7 +36,7 @@
                         <div class="form-group row">
                             <label for="status" class="col-md-4 col-form-label text-md-right">Status</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 col-form-label">
                             	<input type="radio" name="status" value=1> Aktif
                             	<input type="radio" name="status" value=0> Tidak Aktif
                         	</div>
