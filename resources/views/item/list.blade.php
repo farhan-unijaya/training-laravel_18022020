@@ -30,14 +30,14 @@
                                 <?php if ($valueItem->status): ?>
                                     Aktif     
                                 <?php else: ?>
-                                    Tak Aktif
+                                    Tidak Aktif
                                 <?php endif ?>         
                             </td>
                 			<td>{{ $valueItem->price }}</td>
                 			<td>
                 				<a class="btn btn-success btn-primary btn-xs" href="{{ route('item.form',$valueItem->item_id) }}" style="margin-bottom:10px">KEMASKINI</a>
                 				<br>
-<a class="btn btn-success btn-danger btn-xs" href="javascript:;" onclick="remove({{ $valueItem->item_id }})">PADAM</a>
+                                <a class="btn btn-success btn-danger btn-xs" href="javascript:;" onclick="remove({{ $valueItem->item_id }})">PADAM</a>
                 			</td>
                 		</tr>
                 		<?php endforeach ?>

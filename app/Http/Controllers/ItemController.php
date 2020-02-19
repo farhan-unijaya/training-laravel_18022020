@@ -71,9 +71,11 @@ class ItemController extends Controller
      * @param  \App\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function edit(Item $item)
+    public function edit(Request $request)
     {
         //
+        $item = Item::findOrFail($request->id);
+        return view('item.edit',compact('item'));
     }
 
     /**
@@ -86,6 +88,10 @@ class ItemController extends Controller
     public function update(Request $request, Item $item)
     {
         //
+        $item = Item::findOrFail($request->id);
+        $item->update($request->all());
+
+        return redirect()->route('item.list');
     }
 
     /**
