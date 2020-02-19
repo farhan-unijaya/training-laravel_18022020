@@ -26,7 +26,13 @@
                 			<td>{{ $keyItem+1 }}</td>
                 			<td>{{ $valueItem->name }}</td>
                 			<td>{!! nl2br($valueItem->description) !!}</td>
-                			<td>{{ $valueItem->status }}</td>
+                			<td>
+                                <?php if ($valueItem->status): ?>
+                                    Aktif     
+                                <?php else: ?>
+                                    Tak Aktif
+                                <?php endif ?>         
+                            </td>
                 			<td>{{ $valueItem->price }}</td>
                 			<td>
                 				<a class="btn btn-success btn-primary btn-xs" href="{{ route('item.form',$valueItem->item_id) }}" style="margin-bottom:10px">KEMASKINI</a>
