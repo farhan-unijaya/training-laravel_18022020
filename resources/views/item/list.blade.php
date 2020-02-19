@@ -71,7 +71,6 @@ function remove(id) {
                 contentType: false,
                 processData: false,
                 success: function(data) {
-                    swal(data.title, data.message, data.status);
 
                     swal({
                         title: data.title,
