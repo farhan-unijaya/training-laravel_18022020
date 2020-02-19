@@ -45,3 +45,53 @@
 </div>
 
 @endsection
+
+@push('js')
+
+<script type="text/javascript">
+
+        function remove(id) {
+
+        swal({
+            title: "Padam Data",
+            text: "Data yang telah dipadam tidak boleh dikembalikan. Teruskan?",
+            icon: "warning",
+            buttons: ["Batal", { text: "Padam", closeModal: false }],
+            dangerMode: true,
+        })
+        .then((confirm) => {
+            if (confirm) {
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url: "{{ route('item') }}/form/"+id,
+                    method: 'delete',
+                    dataType: 'json',
+                    async: true,
+                    contentType: false,
+                    processData: false,
+                    success: function(data) {
+
+                        swal({
+                            title: data.title,
+                            text: data.message,
+                            icon: data.status,
+                            button: "OK",
+                        })
+                        .then((confirm) => {
+                            if (confirm) {
+                                location.reload();
+                            }
+                        });
+
+                    }
+                });
+            }
+        });
+
+        }
+
+</script>
+
+@endpush

@@ -36,9 +36,13 @@ Route::prefix('item')->group(function () {
 	});
 
 	Route::get('/', 'ItemController@create')->name('item');
-	Route::post('/', 'ItemController@store')->name('item');
-	Route::get('{id}', 'ItemController@edit')->name('item.form');
-	Route::post('{id}', 'ItemController@update')->name('item.form');
-	Route::delete('{id}', 'ItemController@destroy')->name('item.form');
+    Route::post('/', 'ItemController@store')->name('item');
+
+    Route::prefix('form')->group(function () {
+        Route::get('{id}', 'ItemController@edit')->name('item.form');
+        Route::post('{id}', 'ItemController@update')->name('item.form');
+        Route::delete('{id}', 'ItemController@destroy')->name('item.form');
+    });
+
 
 });
