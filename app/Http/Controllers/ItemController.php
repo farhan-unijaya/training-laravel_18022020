@@ -39,7 +39,8 @@ class ItemController extends Controller
     {
         //
         if( Item::create($request->all()) ){
-            return "Success Insert Data - ".$request->name;
+            return redirect()->route('item.list');
+            // return "Success Insert Data - ".$request->name;
         }else{
             return "Error";
         }
