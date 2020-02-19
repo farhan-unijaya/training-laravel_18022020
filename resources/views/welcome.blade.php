@@ -94,7 +94,10 @@
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                     <a href="{{ route('training') }}">Training Page</a>
                     <a href="{{ route('item.list') }}">Senarai Item</a>
+<<<<<<< HEAD
 
+=======
+>>>>>>> farhan
                 </div>
             </div>
         </div>
