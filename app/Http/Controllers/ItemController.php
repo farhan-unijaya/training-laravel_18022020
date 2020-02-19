@@ -71,9 +71,10 @@ class ItemController extends Controller
      * @param  \App\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function edit(Item $item)
+    public function edit(Request $request)
     {
-        //
+        $item = Item::findorfail($request->id);
+        return view('item.edit', compact('item'));
     }
 
     /**
@@ -85,7 +86,11 @@ class ItemController extends Controller
      */
     public function update(Request $request, Item $item)
     {
-        //
+        $item = Item::findorfail($request->id);
+        $item->update($request->all());
+
+        return redirect()->route('item.list');
+    
     }
 
     /**
@@ -94,8 +99,12 @@ class ItemController extends Controller
      * @param  \App\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Item $item)
+    public function destroy(Request $request)
     {
-        //
+        $item = Item::findorfail($request->id);
+
+        if ($item->delete()){
+            return response()->json(['status' => 'Success', 'title' => 'Berjaya', 'message' => 'data telah dipadam']);
+        }
     }
 }
