@@ -9,6 +9,9 @@
 
                 <div class="card-body">
 
+                    <a href="{{ route('item') }}" class="btn btn-primary">Tambah
+                    </a>
+
                 	<table class="table table-bordered">
                 		<tr>
                 			<td>No</td>
@@ -22,7 +25,8 @@
                 		<tr>
                 			<td>{{ $keyItem+1 }}</td>
                 			<td>{{ $valueItem->name }}</td>
-                			<td>{{ $valueItem->description }}</td>
+                            <!--<td>{{ $valueItem->description }}</td>-->
+                			<td>{!! nl2br($valueItem->description)!!}</td>
                 			<td>{{ $valueItem->status }}</td>
                 			<td>{{ $valueItem->price }}</td>
                 			<td>
