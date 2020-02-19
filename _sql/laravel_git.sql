@@ -64,7 +64,7 @@ CREATE TABLE `password_resets` (
 -- ----------------------------
 -- Records of password_resets
 -- ----------------------------
-INSERT INTO `password_resets` VALUES ('farhanz95@gmail.com', '$2y$10$PQBR0Jvu46M.6/NIJrhZBuoYaNuRUifnYxL6mYSAHfQH7nPgZpAUW', '2020-02-18 04:32:30');
+INSERT INTO `password_resets` VALUES ('farhan.unijaya@gmail.com', '$2y$10$PQBR0Jvu46M.6/NIJrhZBuoYaNuRUifnYxL6mYSAHfQH7nPgZpAUW', '2020-02-18 04:32:30');
 
 -- ----------------------------
 -- Table structure for users
