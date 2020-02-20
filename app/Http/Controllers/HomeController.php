@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Mail;
+use App\Mail\Sample;
+use App\Feedback;
 
 class HomeController extends Controller
 {
@@ -34,11 +36,15 @@ class HomeController extends Controller
         $message = $request->message;
         $subject = $request->subject;
 
-        Mail::raw($message,function($message) use ($email,$subject) {
-            $message->from(env('MAIL_FROM_ADDRESS'),env('MAIL_FROM_NAME'));
-            $message->to($email);
-            $message->subject($subject);
-        });
+        $feedback = Feedback::create($request->all());
+
+        // Mail::raw($message,function($message) use ($email,$subject) {
+        //     $message->from(env('MAIL_FROM_ADDRESS'),env('MAIL_FROM_NAME'));
+        //     $message->to($email);
+        //     $message->subject($subject);
+        // });
+
+        Mail::to($request->email)->send(new Sample($feedback));
 
     }
 
