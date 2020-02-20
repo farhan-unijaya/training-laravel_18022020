@@ -14,8 +14,8 @@ Emel: <b> {{ $feedback->email }} </b>
 Subjek: <b> {{ $feedback->subject }} </b>
 <br>Mesej: 
 <br>
-<div style="border:3px solid #efefef;padding:10px 10px 10px 10px">
-    <b>{!! nl2br($feedback->message) !!}</b>
+<div style="border:1px solid #000;padding:10px 10px 10px 10px;color:#000">
+    {!! nl2br($feedback->message) !!}
 </div>
 <br><br>
 Sila klik pada pautan dibawah untuk log masuk ke dalam sistem.
@@ -34,5 +34,6 @@ Kembali Ke Sistem
 <br>
 Sekian, terima kasih.
 
-<strong>{{ config('app.name') }}</strong>
+<img src="{{ asset('images/jata negara-01.png') }}" height="100px" max-width="100%">
+
 @endcomponent
