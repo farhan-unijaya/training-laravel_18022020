@@ -3,7 +3,6 @@ $url = route('login');
 ?>
 
 @component('mail::message')
-# {{ addcslashes($subject , '#') }}
 
 Salam sejahtera <b>{{ $feedback->name }}</b>,
 <br><br>

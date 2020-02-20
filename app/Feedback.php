@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Feedback extends Model
 {
-	protected $table = 'feedback';
-	public $timestamps = false;
+    protected $table = 'feedback';
+    public $timestamps = false;
 
     protected $fillable = [
     	'name',
     	'email',
-    	'message',
     	'subject',
+    	'message',
+    	'created_at'
     ];
-    
 }
