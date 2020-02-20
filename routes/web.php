@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+	return redirect()->route('login');
 });
 
 Route::get('training', function () {
@@ -23,6 +24,7 @@ Auth::routes();
 
 Route::prefix('home')->group(function () {
 	Route::get('/','HomeController@index')->name('home'); // /home
+	Route::post('/','HomeController@send')->name('home'); // /home post data
 	Route::get('/list','HomeController@list')->name('list'); //home/list
 });
 
@@ -32,13 +34,16 @@ Route::prefix('item')->group(function () {
 		Route::get('{id}', 'ItemController@show')->name('item.view');
 	});
 	Route::prefix('list')->group(function() {
-		Route::get('/', 'ItemController@list')->name('item.list');
+		Route::get('/', 'ItemController@list')->name('item.list')->middleware('auth');
 	});
 
 	Route::get('/', 'ItemController@create')->name('item');
 	Route::post('/', 'ItemController@store')->name('item');
-	Route::get('{id}', 'ItemController@edit')->name('item.form');
-	Route::post('{id}', 'ItemController@update')->name('item.form');
-	Route::delete('{id}', 'ItemController@destroy')->name('item.form');
+
+	Route::prefix('form')->group(function() {
+		Route::get('{id}', 'ItemController@edit')->name('item.form');
+		Route::post('{id}', 'ItemController@update')->name('item.form');
+		Route::delete('{id}', 'ItemController@destroy')->name('item.form');
+	});
 
 });
